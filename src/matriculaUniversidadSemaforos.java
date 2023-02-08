@@ -1,7 +1,9 @@
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class matriculaUniversidadSemaforos {
-    private static int NIP = 1;
+    public static int NIP = 1;
     private static Semaphore semaphore = new Semaphore(3); //Hay 3 mostradores para matricularse
 
 
@@ -13,10 +15,19 @@ class matriculaUniversidadSemaforos {
         }
 
         public void run() {
+            Lock lock = new ReentrantLock();
             try {
                 semaphore.acquire();
-                System.out.println("Alumno con matricula " + matricula + " matriculado con numero: " + NIP);
-                NIP++;
+
+                lock.lock();
+                try {
+                    // Aquí coloca la línea de código que solo quieres que ejecute un hilo a la vez
+                    System.out.println("Alumno con matricula " + matricula + " matriculado con numero: " + NIP);
+                    NIP++;
+                } finally {
+                    lock.unlock();
+                }
+
                 Thread.sleep(1000);
                 semaphore.release();
             } catch (InterruptedException e) {
