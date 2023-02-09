@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Estudiante extends Thread {
 
@@ -11,12 +12,14 @@ class Estudiante extends Thread {
         this.identif = identif;
         this.itv = itv;
 
-        this.NIP = identif;
+        this.NIP = identif * 1050;
         this.matricula = itv;
+       // this.numMatricula = 1;
     }
 
     @Override
     public void run() {
-        itv.nuevoCoche(identif);
+        //itv.nuevoCoche(identif);
+        itv.nuevoCoche(this.NIP);
     }
 }
