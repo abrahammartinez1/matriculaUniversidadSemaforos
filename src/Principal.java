@@ -3,8 +3,8 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        int puestos = 2;
-        int estudiantes = 10;
+        int puestos = 3;
+        int estudiantes = 100;
 
         Matricula itv = new Matricula();
         System.out.println(estudiantes + " Estudiantes serán matriculados por " + puestos + " puestos.");
