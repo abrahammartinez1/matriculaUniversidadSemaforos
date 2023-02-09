@@ -22,7 +22,7 @@ class Puesto extends Thread {
                 numeroCoche = itv.terminarCoche(retardo);
                 numMatricula = itv.getnumMatricula();
                 sleep(retardo);
-                System.out.println("El puesto " + identif + " ha matriculado al estudiante " + numeroCoche + " y le ha asignado la matrícula: M" + numMatricula);
+                System.out.println("El puesto " + identif + " ha matriculado al estudiante NIP" + numeroCoche + " y le ha asignado la matrícula: M" + numMatricula);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
