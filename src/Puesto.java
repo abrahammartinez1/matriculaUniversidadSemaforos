@@ -1,12 +1,10 @@
-package Clases;
-
 class Puesto extends Thread {
 
     private int identif;
-    private ITV itv;
+    private Matricula itv;
     private Integer tiempoPuesto;
 
-    public Puesto(int identif, ITV itv) {
+    public Puesto(int identif, Matricula itv) {
         this.identif = identif;
         this.itv = itv;
         this.tiempoPuesto = 0;

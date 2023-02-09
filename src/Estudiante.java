@@ -1,11 +1,10 @@
-package Clases;
 
-class Vehiculo extends Thread {
+class Estudiante extends Thread {
 
     private int identif;
-    private ITV itv;
+    private Matricula itv;
 
-    public Vehiculo(int identif, ITV itv) {
+    public Estudiante(int identif, Matricula itv) {
         this.identif = identif;
         this.itv = itv;
     }

@@ -1,15 +1,14 @@
-package Clases;
 
 import java.util.concurrent.Semaphore;
 import java.util.PriorityQueue;
 
-class ITV {
+class Matricula {
 
-    private Semaphore semaforo;
-    private PriorityQueue<Integer> listaCoches;
+    private final Semaphore semaforo;
+    private final PriorityQueue<Integer> listaCoches;
     private Integer tiempoTotal;
 
-    public ITV() {
+    public Matricula() {
         semaforo = new Semaphore(1);
         listaCoches = new PriorityQueue<Integer>();
         tiempoTotal = 0;

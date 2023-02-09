@@ -1,16 +1,15 @@
-package Clases;
 
 public class Principal {
 
     public static void main(String[] args) {
         int pueRandom = (int) (Math.random() * 4) + 2;
         int vehRandom = (int) (Math.random() * 30) + 10;
-        ITV itv = new ITV();
+        Matricula itv = new Matricula();
         System.out.println(vehRandom + " Vehículos serán atendidos por " + pueRandom + " puestos.");
         // Creación de vehículos
-        Vehiculo[] v = new Vehiculo[vehRandom];
+        Estudiante[] v = new Estudiante[vehRandom];
         for (int i = 0; i < vehRandom; i++) {
-            v[i] = new Vehiculo(i + 1, itv);
+            v[i] = new Estudiante(i + 1, itv);
             v[i].start();
         }
         // Creación de puestos
