@@ -20,7 +20,7 @@ class Puesto extends Thread {
                 tiempoPuesto += retardo;
                 numeroCoche = itv.terminarCoche(retardo);
                 sleep(retardo);
-                System.out.println("El puesto " + identif + " ha revisado el coche " + numeroCoche + " en un tiempo de " + retardo);
+                System.out.println("El puesto " + identif + " ha revisado el estudiante " + numeroCoche + " en un tiempo de " + retardo);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
