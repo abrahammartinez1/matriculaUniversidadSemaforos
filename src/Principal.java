@@ -38,6 +38,6 @@ public class Principal {
             }
         }
         // Se cierra la Matriculacion, no hay estudiantes para matricular y todos los puestos han terminado
-        System.out.println("Se cierra la Matriculación ");
+        System.out.println("Se cierra la Matriculación, no hay estudiantes para matricular y todos los puestos han terminado ");
     }
 }
