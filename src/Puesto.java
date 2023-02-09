@@ -2,25 +2,27 @@ class Puesto extends Thread {
 
     private int identif;
     private Matricula itv;
-    private Integer tiempoPuesto;
+
 
     public Puesto(int identif, Matricula itv) {
         this.identif = identif;
         this.itv = itv;
-        this.tiempoPuesto = 0;
+
     }
 
     @Override
     public void run() {
         int retardo;
         int numeroCoche;
+        int numMatricula;
         while (itv.isCochesPendientes()) {
             try {
                 retardo = (int) (Math.random() * 90 + 10);
-                tiempoPuesto += retardo;
+
                 numeroCoche = itv.terminarCoche(retardo);
+                numMatricula = itv.getnumMatricula();
                 sleep(retardo);
-                System.out.println("El puesto " + identif + " ha matriculado al estudiante " + numeroCoche + " en un tiempo de " + retardo);
+                System.out.println("El puesto " + identif + " ha matriculado al estudiante " + numeroCoche + " y le ha asignado la matrícula: M" + numMatricula);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

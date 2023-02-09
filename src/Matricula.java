@@ -6,12 +6,13 @@ class Matricula {
 
     private final Semaphore semaforo;
     private final PriorityQueue<Integer> listaCoches;
-    private Integer tiempoTotal;
+
+    private Integer contadorMatricula;
 
     public Matricula() {
         semaforo = new Semaphore(1);
         listaCoches = new PriorityQueue<Integer>();
-        tiempoTotal = 0;
+        contadorMatricula = 0;
     }
 
     public void nuevoCoche(Integer numeroCoche) {
@@ -30,7 +31,7 @@ class Matricula {
             if (isCochesPendientes()) {
                 semaforo.acquire();
                 coche = listaCoches.poll();
-                tiempoTotal += tiempoParcial;
+                contadorMatricula+=1;
                 semaforo.release();
             }
         } catch (InterruptedException e) {
@@ -43,8 +44,8 @@ class Matricula {
         return listaCoches.size() > 0;
     }
 
-    public Integer getTiempoTotal() {
-        return tiempoTotal;
+    public Integer getnumMatricula() {
+        return contadorMatricula;
     }
 
 }

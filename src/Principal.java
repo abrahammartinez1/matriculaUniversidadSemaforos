@@ -3,14 +3,14 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        int puestos = 3;
-        int estudiantes = 1100;
+        int puestos = 2;
+        int estudiantes = 10;
 
         Matricula itv = new Matricula();
         System.out.println(estudiantes + " Estudiantes serán matriculados por " + puestos + " puestos.");
         // Creación de vehículos
         Estudiante[] v = new Estudiante[estudiantes];
-        for (int i = 1000; i < estudiantes; i++) {
+        for (int i = 0; i < estudiantes; i++) {
             v[i] = new Estudiante(i + 1, itv);
             v[i].start();
         }
@@ -29,7 +29,7 @@ public class Principal {
             }
         }
         // Se espera a que terminen todos vehículos
-        for (int i = 1000; i < estudiantes; i++) {
+        for (int i = 0; i < estudiantes; i++) {
             try {
                 v[i].join();
             } catch (InterruptedException e) {
@@ -37,7 +37,7 @@ public class Principal {
                 e.printStackTrace();
             }
         }
-        // Se cierra la itv
+        // Se cierra la Matriculacion, no hay estudiantes para matricular y todos los puestos han terminado
         System.out.println("Se cierra la Matriculación ");
     }
 }
